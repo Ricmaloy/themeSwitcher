@@ -1,30 +1,30 @@
-import { useContext } from 'react';
 import Switch from 'react-switch';
-import { ThemeContext } from 'styled-components';
 import { shade } from 'polished';
 import { Container } from './styles';
 
-interface HeaderProps {
-    toogleTheme: () => void;
-}
+import { useTheme } from '../../hooks/useTheme';
 
-export const Header = ({ toogleTheme }:HeaderProps) => {
-    const { colors, title } = useContext(ThemeContext);
+export const Header = () => {
+    const { theme, toggleTheme } = useTheme();
 
+    const handleChangeTheme = () => {
+        toggleTheme();
+    }
+    
     return (
         <Container>
             Hello World
 
             <Switch 
-              onChange={toogleTheme}
-              checked={title === 'dark'}
+              onChange={handleChangeTheme}
+              checked={theme.title === 'dark'}
               checkedIcon={false}
               uncheckedIcon={false}
               height={15}
               width={40}
               handleDiameter={20}
-              onColor={colors.secundary}
-              offColor={shade(0.15, colors.primary)}
+              onColor={theme.colors.secundary}
+              offColor={shade(0.25, theme.colors.primary)}
             />
         </Container>
     );
