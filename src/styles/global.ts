@@ -12,5 +12,12 @@ export default createGlobalStyle`
         font-size: 14px;
         color: ${props => props.theme.colors.text};
         font-family: sans-serif;
+
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `;

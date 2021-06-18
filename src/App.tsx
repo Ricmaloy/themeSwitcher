@@ -1,4 +1,4 @@
-import { Header } from "./components/Header";
+import { Card } from "./components/Card";
 import GlobalStyle from './styles/global';
 
 import { ThemeProvider } from 'styled-components';
@@ -10,7 +10,7 @@ function App() {
       <>
       <ThemeProvider theme={theme} >
         <GlobalStyle />
-        <Header />
+        <Card />
       </ThemeProvider>
       </>
     );
